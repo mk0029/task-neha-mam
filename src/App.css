@@ -1,0 +1,53 @@
+* {
+  list-style: none !important;
+}
+.box {
+  height: 300px;
+  width: 300px;
+  border: 2px solid white;
+  background-color: gray;
+}
+.text_def {
+  font-size: 15px;
+}
+.Input_common {
+  width: 50%;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgba(54, 50, 50, 0.444);
+  color: white;
+  outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.transition400 {
+  transition: all 400ms ease-in-out;
+}
+.errVibe {
+  animation: err 0.01s linear 0s infinite alternate-reverse;
+  background-color: red !important;
+}
+
+@keyframes err {
+  0% {
+    transform: translate(-2px, 1px);
+  }
+
+  100% {
+    transform: translate(2px, -1px);
+  }
+}
+.inputmain {
+  width: 100%;
+  padding: 16px;
+  border: 2px solid black;
+  margin: 16px 0px;
+}
+.box_user {
+  border: 2px solid black;
+}
+.username {
+  font-style: 24px;
+}
