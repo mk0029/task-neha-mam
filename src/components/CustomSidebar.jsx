@@ -23,7 +23,7 @@ const CustomSidebar = () => {
     },
     {
       linkName: "Emailjs",
-      linkURL: "/Emailjs",
+      linkURL: "/",
       rounded: "20%",
       linkId: "null",
     },
