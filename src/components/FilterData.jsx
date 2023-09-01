@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import CustomNav from "./CustomNav";
 
 const FilterData = () => {
-  const [myarr] = useState([
+  const myarr = [
     {
       name: "Mohit",
       id: "10",
@@ -67,7 +68,7 @@ const FilterData = () => {
       id: "02",
       work: "web-D",
     },
-  ]);
+  ];
 
   const [countSearch, setcountSearch] = useState(false);
   const [filterarr, setfilterarr] = useState(myarr);
@@ -104,76 +105,80 @@ const FilterData = () => {
   }
 
   return (
-    <section>
-      <div className=" container">
-        <input
-          id="UserSlect"
-          type="search"
-          value={dataSearch}
-          onChange={(e) => setDataSearch(e.target.value)}
-          className="inputmain"
-          placeholder="Name/Id/Work"
-        />
-        <div className="d-flex align-items-center justify-content-between">
-          <div className="d-flex align-items-center">
-            <h6>total Persons</h6>
-            <h3 className="ps-1"> {`${dataCountTotal}`}</h3>
+    <>
+      {" "}
+      <CustomNav />{" "}
+      <section>
+        <div className=" container">
+          <input
+            id="UserSlect"
+            type="search"
+            value={dataSearch}
+            onChange={(e) => setDataSearch(e.target.value)}
+            className="inputmain"
+            placeholder="Name/Id/Work"
+          />
+          <div className="d-flex align-items-center justify-content-between">
+            <div className="d-flex align-items-center">
+              <h6>total Persons</h6>
+              <h3 className="ps-1"> {`${dataCountTotal}`}</h3>
+            </div>
+            <div className="d-flex align-items-center">
+              <h6>in Search Result</h6>
+              <h3 className="ps-1">
+                {" "}
+                {dataSearch !== "" ? `${dataCount}` : "0"}
+              </h3>
+            </div>
+            <div className="d-flex align-items-center">
+              <h6>Slected</h6>
+              <h3 className="ps-1"> {`${dataCountslected}`}</h3>
+            </div>
           </div>
-          <div className="d-flex align-items-center">
-            <h6>in Search Result</h6>
-            <h3 className="ps-1">
-              {" "}
-              {dataSearch !== "" ? `${dataCount}` : "0"}
-            </h3>
-          </div>
-          <div className="d-flex align-items-center">
-            <h6>Slected</h6>
-            <h3 className="ps-1"> {`${dataCountslected}`}</h3>
-          </div>
-        </div>
 
-        <div className="row overflow-auto mb-5" style={{ height: "170px" }}>
-          {userOutput.map((data, i) => (
-            <>
-              <div
-                key={i}
-                className="col-4 my-3 px-1"
-                onClick={() => {
-                  runHide(i);
-                  runShow(data);
-                }}>
-                {console.log(i, "index")}
-                <div className="box_user p-3">
-                  {" "}
-                  <h2 className="username">
-                    <b>User Name :-</b> {data.name}
-                  </h2>
-                  <h4 className="userid"> User Id :- {data.id}</h4>
-                  <h6 className="userwork">Work :- {data.work}</h6>
+          <div className="row overflow-auto mb-5" style={{ height: "170px" }}>
+            {userOutput.map((data, i) => (
+              <>
+                <div
+                  key={i}
+                  className="col-4 my-3 px-1"
+                  onClick={() => {
+                    runHide(i);
+                    runShow(data);
+                  }}>
+                  {console.log(i, "index")}
+                  <div className="box_user p-3">
+                    {" "}
+                    <h2 className="username">
+                      <b>User Name :-</b> {data.name}
+                    </h2>
+                    <h4 className="userid"> User Id :- {data.id}</h4>
+                    <h6 className="userwork">Work :- {data.work}</h6>
+                  </div>
                 </div>
-              </div>
-            </>
-          ))}
-        </div>
-        <h2>Slected</h2>
-        <div className="row">
-          {printfilterarr.map((data, i) => (
-            <>
-              <div className="col-4 my-3 px-1">
-                <div className="box_user p-3">
-                  {" "}
-                  <h2 className="username">
-                    <b>User Name :-</b> {data.name}
-                  </h2>
-                  <h4 className="userid"> User Id :- {data.id}</h4>
-                  <h6 className="userwork">Work :- {data.work}</h6>
+              </>
+            ))}
+          </div>
+          <h2>Slected</h2>
+          <div className="row">
+            {printfilterarr.map((data, i) => (
+              <>
+                <div className="col-4 my-3 px-1">
+                  <div className="box_user p-3">
+                    {" "}
+                    <h2 className="username">
+                      <b>User Name :-</b> {data.name}
+                    </h2>
+                    <h4 className="userid"> User Id :- {data.id}</h4>
+                    <h6 className="userwork">Work :- {data.work}</h6>
+                  </div>
                 </div>
-              </div>
-            </>
-          ))}
+              </>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

@@ -9,12 +9,6 @@ const CustomNav = () => {
 
   const navArr = [
     {
-      linkName: "None",
-      linkURL: "/",
-      rounded: "0",
-      linkId: "none",
-    },
-    {
       linkName: "Nested-Map",
       linkURL: "/NestedMap",
       rounded: "10%",
@@ -39,14 +33,39 @@ const CustomNav = () => {
       linkId: "null",
     },
     {
-      linkName: "MapFilterV2",
-      linkURL: "/MapFilterV2",
+      linkName: "StudentTodo",
+      linkURL: "/StudentTodo",
+      rounded: "",
+      linkId: "null",
+    },
+    {
+      linkName: "CustomDrop",
+      linkURL: "/CustomDrop",
+      rounded: "",
+      linkId: "null",
+    },
+    {
+      linkName: "CustomTab",
+      linkURL: "/CustomTab",
+      rounded: "",
+      linkId: "null",
+    },
+    {
+      linkName: "CustomSidebar",
+      linkURL: "/CustomSidebar",
       rounded: "",
       linkId: "null",
     },
   ];
   const [indexGet, setIndexGet] = useState("");
-
+  const [sideBarShow, setSideBarShow] = useState(false);
+  if (sideBarShow === true) {
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+  } else if (sideBarShow === false) {
+    document.body.style.overflow = "auto";
+    document.body.style.height = "auto";
+  }
   return (
     <>
       <section
@@ -54,11 +73,18 @@ const CustomNav = () => {
           indexGet.linkURL === "/" ? "min-vh-100 " : ""
         }`}>
         <div className=" container">
-          <nav className="d-flex justify-content-between align-items-center ">
-            <ul className=" m-0 p-0 d-flex gap-3 align-items-center ">
+          <nav
+            onClick={() => setSideBarShow(!sideBarShow)}
+            className={`justify-content-center align-items-center d-flex align-items-center nav_mobile ${
+              sideBarShow ? "nav_mobile_show" : ""
+            }`}>
+            {" "}
+            <ul className=" m-0 p-0 d-flex flex-column flex-xl-row gap-3 align-items-center ">
               {navArr.map((data, i) => (
                 <>
-                  <li className="list-unstyled ">
+                  <li
+                    className="list-unstyled "
+                    onClick={() => setSideBarShow(!sideBarShow)}>
                     <Link
                       to={`${data.linkURL}`}
                       onClick={() => setIndexGet(data)}
@@ -81,6 +107,11 @@ const CustomNav = () => {
               ))}
             </ul>
           </nav>
+        </div>
+        <div
+          onClick={() => setSideBarShow(!sideBarShow)}
+          className=" bg-black p-3 text-white d-xl-none">
+          open Nav{" "}
         </div>
         <div
           className={` d-flex flex-grow-1 justify-content-center align-items-center ${

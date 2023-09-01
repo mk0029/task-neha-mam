@@ -62,8 +62,8 @@ export const colBtnFirst = [
     text: "MD",
     textStyle: "delete ",
     textStyleValue: "del ",
-
     textValue: "16px",
+    id: "1",
   },
   {
     btn: "col-12",

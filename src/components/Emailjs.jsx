@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import CustomNav from "./CustomNav";
 
 const Emailjs = () => {
   emailjs.init("OigmccDLEnesfI1B9");
@@ -97,6 +98,8 @@ const Emailjs = () => {
 
   return (
     <>
+      {" "}
+      <CustomNav />{" "}
       <section className="min-vh-100 bg-info-subtle">
         <div className=" container">
           <form onSubmit={Submitdata} action="">

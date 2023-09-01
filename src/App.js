@@ -4,21 +4,27 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CustomNav from "./components/CustomNav";
 import NestedMap from "./components/NestedMap";
 import Emailjs from "./components/Emailjs";
-import CustomSlect from "./components/CustomSlect";
+// import CustomSlect from "./components/CustomSlect";
 import PropsData from "./components/PropsData";
 import FilterData from "./components/FilterData";
-import MapFilterV2 from "./components/MapFilterV2";
+import StudentTodo from "./components/StudentTodo";
+import CustomDrop from "./components/CustomDrop";
+import CustomTab from "./components/CustomTab";
+import CustomSidebar from "./components/CustomSidebar";
 
 function App() {
   return (
     <>
-      <CustomNav />
+      {/* <CustomNav /> */}
       <Routes>
         <Route path="/NestedMap" element={<NestedMap />} />
         <Route path="/Emailjs" element={<Emailjs />} />
         <Route path="/CustomSlect" element={<PropsData />} />
         <Route path="/FilterData" element={<FilterData />} />
-        <Route path="/MapFilterV2" element={<MapFilterV2 />} />
+        <Route path="/StudentTodo" element={<StudentTodo />} />
+        <Route path="/CustomDrop" element={<CustomDrop />} />
+        <Route path="/CustomTab" element={<CustomTab />} />
+        <Route path="/CustomSidebar" element={<CustomSidebar />} />
       </Routes>
     </>
   );
